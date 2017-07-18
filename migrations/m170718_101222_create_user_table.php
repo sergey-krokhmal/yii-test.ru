@@ -38,6 +38,8 @@ class m170718_101222_create_user_table extends Migration
 			'company' => $this->string(128),
             'auth_key' => $this->string(32)->notNull(),
             'password_hash' => $this->string()->notNull(),
+			'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
             'password_reset_token' => $this->string()->unique(),
 			
         ], $tableOptions);
