@@ -98,6 +98,7 @@ class SiteController extends Controller
     }
 
 	/**
+	 * Registration action.
 	 *
 	 * @return Response|string
 	 */
