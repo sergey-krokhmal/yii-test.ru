@@ -12,7 +12,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'form-registration']); ?>
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'person_type')
+					->radioList([
+						'1' => 'Физическое лицо',
+						'2' => 'Юридическое лицо',
+					]);?>
+                <?= $form->field($model, 'fio')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'inn') ?>
+                <?= $form->field($model, 'company') ?>
                 <?= $form->field($model, 'email') ?>
                 <?= $form->field($model, 'password')->passwordInput() ?>
                 <div class="form-group">

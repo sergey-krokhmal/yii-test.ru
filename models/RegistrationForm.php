@@ -13,7 +13,7 @@ class RegistrationForm extends Model
 	public $company;
     public $email;
     public $password;
-	public $id_person_type;
+	public $person_type;
  
     /**
      * @inheritdoc
@@ -33,7 +33,8 @@ class RegistrationForm extends Model
             ['password', 'string', 'min' => 6],
 			['inn', 'trim'],
 			['inn', 'string', 'length' => 12],
-			['id_person_type', 'integer'],
+			['person_type', 'required'],
+			['person_type', 'integer'],
 			['company', 'trim'],
             ['company', 'required'],
             ['company', 'string', 'min' => 2, 'max' => 255],
@@ -57,7 +58,7 @@ class RegistrationForm extends Model
         $user->email = $this->email;
         $user->inn = $this->inn;
         $user->company = $this->company;
-        $user->id_person_type = $this->id_person_type;
+        $user->id_person_type = $this->person_type;
         $user->setPassword($this->password);
         $user->generateAuthKey();
         return $user->save() ? $user : null;
