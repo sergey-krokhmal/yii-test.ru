@@ -36,14 +36,13 @@ AppAsset::register($this);
     ]);
 	$menuItems = [
 		['label' => 'Домой', 'url' => ['/site/index']],
-		['label' => 'О сайте', 'url' => ['/site/about']],
-		['label' => 'Связь', 'url' => ['/site/contact']],
 	];
 	 
 	if (Yii::$app->user->isGuest) {
 		$menuItems[] = ['label' => 'Регистрация', 'url' => ['/site/registration']];
 		$menuItems[] = ['label' => 'Войти', 'url' => ['/site/login']];
 	} else {
+		$menuItems[] = ['label' => 'Кеш', 'url' => ['/data-cache/index']];
 		$menuItems[] = '<li>'
 			. Html::beginForm(['/site/logout'], 'post')
 			. Html::submitButton(
