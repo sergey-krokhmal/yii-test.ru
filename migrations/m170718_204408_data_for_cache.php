@@ -17,29 +17,10 @@ class m170718_204408_data_for_cache extends Migration
 			'id' => $this->primaryKey(),
 			'date' => $this->date(),
             'type' => $this->string(16),
+            'a' => $this->string(32),
+            'b' => $this->string(32),
             'user_id' => $this->integer()
 		], $tableOptions);
-        
-        // Добавить тестовые данные
-		$this->insert('data_cache', ['date' => '2017-07-18', 'type' => 'Test', 'user_id' => 1]);
-		$this->insert('data_cache', ['date' => '2017-07-18', 'type' => 'Done', 'user_id' => 2]);
-		$this->insert('data_cache', ['date' => '2017-07-18', 'type' => 'Add', 'user_id' => 1]);
-		$this->insert('data_cache', ['date' => '2017-07-18', 'type' => 'Add', 'user_id' => 4]);
-		$this->insert('data_cache', ['date' => '2017-07-18', 'type' => 'Test', 'user_id' => 1]);
-		$this->insert('data_cache', ['date' => '2017-07-18', 'type' => 'Done', 'user_id' => 5]);
-		$this->insert('data_cache', ['date' => '2017-07-18', 'type' => 'Test', 'user_id' => 4]);
-		$this->insert('data_cache', ['date' => '2017-07-19', 'type' => 'Add', 'user_id' => 2]);
-		$this->insert('data_cache', ['date' => '2017-07-19', 'type' => 'Done', 'user_id' => 3]);
-		$this->insert('data_cache', ['date' => '2017-07-19', 'type' => 'Test', 'user_id' => 1]);
-		$this->insert('data_cache', ['date' => '2017-07-19', 'type' => 'Add', 'user_id' => 1]);
-		$this->insert('data_cache', ['date' => '2017-07-20', 'type' => 'Test', 'user_id' => 3]);
-		$this->insert('data_cache', ['date' => '2017-07-20', 'type' => 'Add', 'user_id' => 4]);
-		$this->insert('data_cache', ['date' => '2017-07-20', 'type' => 'Done', 'user_id' => 2]);
-		$this->insert('data_cache', ['date' => '2017-07-20', 'type' => 'Add', 'user_id' => 5]);
-		$this->insert('data_cache', ['date' => '2017-07-20', 'type' => 'Test', 'user_id' => 1]);
-		$this->insert('data_cache', ['date' => '2017-07-21', 'type' => 'Done', 'user_id' => 1]);
-		$this->insert('data_cache', ['date' => '2017-07-21', 'type' => 'Done', 'user_id' => 3]);
-		$this->insert('data_cache', ['date' => '2017-07-21', 'type' => 'Test', 'user_id' => 2]);
     }
 
     public function safeDown()
